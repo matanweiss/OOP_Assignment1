@@ -3,8 +3,8 @@ package observer;
 import java.util.ArrayList;
 
 public class GroupAdmin implements Sender {
-    ArrayList<Member> memberList;
-    UndoableStringBuilder current;
+    private ArrayList<Member> memberList;
+    private UndoableStringBuilder current;
 
     public GroupAdmin() {
         memberList = new ArrayList<Member>();
@@ -54,5 +54,9 @@ public class GroupAdmin implements Sender {
     }
     public String getCurrentData(){
         return current.toString();
+    }
+
+    public ArrayList<Member> getMembers(){
+        return memberList;
     }
 }
