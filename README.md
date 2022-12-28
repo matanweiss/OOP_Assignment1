@@ -1,4 +1,7 @@
 # OOP_Assignment1
+## about
+In this project we implemented the observer design pattern.
+the GroupAdmin class is the subject, the observers are ConcreteMember.
 ## running the project
 Running the project requires Java JSK 19, IntelliJ 2022.
 Open the pom.xml file as a project.
