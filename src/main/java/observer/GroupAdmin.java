@@ -1,14 +1,19 @@
 package observer;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 
 public class GroupAdmin implements Sender {
-    private ArrayList<Member> memberList;
+    private HashSet<Member> memberList;
     private UndoableStringBuilder current;
 
     public GroupAdmin() {
-        memberList = new ArrayList<Member>();
+        memberList = new HashSet<Member>();
         current = new UndoableStringBuilder();
+    }
+
+    public GroupAdmin(String s) {
+        memberList = new HashSet<Member>();
+        current = new UndoableStringBuilder(s);
     }
 
     @Override
@@ -20,6 +25,7 @@ public class GroupAdmin implements Sender {
 
     @Override
     public void unregister(Member obj) {
+        obj.update(null);
         memberList.remove(obj);
     }
 
@@ -56,7 +62,7 @@ public class GroupAdmin implements Sender {
         return current.toString();
     }
 
-    public ArrayList<Member> getMembers(){
+    public HashSet<Member> getMembers(){
         return memberList;
     }
 }

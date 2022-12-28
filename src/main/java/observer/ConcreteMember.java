@@ -11,7 +11,11 @@ public class ConcreteMember implements Member{
     }
 
     public String getCurrentData(){
-        return data.toString();
+        if(data != null){
+            return data.toString();
+        }else{
+            return null;
+        }
     }
 
 
